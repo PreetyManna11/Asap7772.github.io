@@ -8,42 +8,42 @@
 	else
 		root["bulmaSlider"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
+return /******/ (function(modules) { / webpackBootstrap
+/******/ 	/ The module cache
 /******/ 	var installedModules = {};
 /******/
-/******/ 	// The require function
+/******/ 	/ The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
-/******/ 		// Check if module is in cache
+/******/ 		/ Check if module is in cache
 /******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
 /******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
+/******/ 		/ Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/
-/******/ 		// Execute the module function
+/******/ 		/ Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/
-/******/ 		// Flag the module as loaded
+/******/ 		/ Flag the module as loaded
 /******/ 		module.l = true;
 /******/
-/******/ 		// Return the exports of the module
+/******/ 		/ Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/
 /******/
-/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	/ expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
 /******/
-/******/ 	// expose the module cache
+/******/ 	/ expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// define getter function for harmony exports
+/******/ 	/ define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
 /******/ 			Object.defineProperty(exports, name, {
@@ -54,7 +54,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		}
 /******/ 	};
 /******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	/ getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
 /******/ 			function getDefault() { return module['default']; } :
@@ -63,13 +63,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		return getter;
 /******/ 	};
 /******/
-/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	/ Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
-/******/ 	// __webpack_public_path__
+/******/ 	/ __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/ 	// Load entry module and return exports
+/******/ 	/ Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
@@ -110,13 +110,13 @@ var bulmaSlider = function (_EventEmitter) {
     var _this = _possibleConstructorReturn(this, (bulmaSlider.__proto__ || Object.getPrototypeOf(bulmaSlider)).call(this));
 
     _this.element = typeof selector === 'string' ? document.querySelector(selector) : selector;
-    // An invalid selector or non-DOM node has been provided.
+    / An invalid selector or non-DOM node has been provided.
     if (!_this.element) {
       throw new Error('An invalid selector or non-DOM node has been provided.');
     }
 
     _this._clickEvents = ['click'];
-    /// Set default options and merge with instance defined
+    // Set default options and merge with instance defined
     _this.options = _extends({}, options);
 
     _this.onSliderInput = _this.onSliderInput.bind(_this);
@@ -149,10 +149,10 @@ var bulmaSlider = function (_EventEmitter) {
 
       if (this.output) {
         if (this.element.classList.contains('has-output-tooltip')) {
-          // Get new output position
+          / Get new output position
           var newPosition = this._getSliderOutputPosition();
 
-          // Set output position
+          / Set output position
           this.output.style['left'] = newPosition.position;
         }
       }
@@ -178,14 +178,14 @@ var bulmaSlider = function (_EventEmitter) {
   }, {
     key: '_getSliderOutputPosition',
     value: function _getSliderOutputPosition() {
-      // Update output position
+      / Update output position
       var newPlace, minValue;
 
       var style = window.getComputedStyle(this.element, null);
-      // Measure width of range input
+      / Measure width of range input
       var sliderWidth = parseInt(style.getPropertyValue('width'), 10);
 
-      // Figure out placement percentage between left and right of input
+      / Figure out placement percentage between left and right of input
       if (!this.element.getAttribute('min')) {
         minValue = 0;
       } else {
@@ -193,7 +193,7 @@ var bulmaSlider = function (_EventEmitter) {
       }
       var newPoint = (this.element.value - minValue) / (this.element.getAttribute('max') - minValue);
 
-      // Prevent bubble from going beyond left or right (unsupported browsers)
+      / Prevent bubble from going beyond left or right (unsupported browsers)
       if (newPoint < 0) {
         newPlace = 0;
       } else if (newPoint > 1) {
@@ -217,7 +217,7 @@ var bulmaSlider = function (_EventEmitter) {
     key: '_bindEvents',
     value: function _bindEvents() {
       if (this.output) {
-        // Add event listener to update output when slider value change
+        / Add event listener to update output when slider value change
         this.element.addEventListener('input', this.onSliderInput, false);
       }
     }
@@ -227,18 +227,18 @@ var bulmaSlider = function (_EventEmitter) {
       e.preventDefault();
 
       if (this.element.classList.contains('has-output-tooltip')) {
-        // Get new output position
+        / Get new output position
         var newPosition = this._getSliderOutputPosition();
 
-        // Set output position
+        / Set output position
         this.output.style['left'] = newPosition.position;
       }
 
-      // Check for prefix and postfix
+      / Check for prefix and postfix
       var prefix = this.output.hasAttribute('data-prefix') ? this.output.getAttribute('data-prefix') : '';
       var postfix = this.output.hasAttribute('data-postfix') ? this.output.getAttribute('data-postfix') : '';
 
-      // Update output with slider value
+      / Update output with slider value
       this.output.value = prefix + this.element.value + postfix;
 
       this.emit('bulmaslider:ready', this.element.value);
@@ -410,10 +410,10 @@ var EventEmitter = function () {
 
       if (Array.isArray(listeners)) {
         listeners.forEach(function (listener, index) {
-          // Start Middleware checks unless we're doing a silent emit
+          / Start Middleware checks unless we're doing a silent emit
           if (!silent) {
             middlewares = _this5._middlewares.get(name);
-            // Check and execute Middleware
+            / Check and execute Middleware
             if (Array.isArray(middlewares)) {
               middlewares.forEach(function (middleware) {
                 middleware(data, function () {
@@ -434,7 +434,7 @@ var EventEmitter = function () {
             }
           }
 
-          // If Middleware checks have been passed, execute
+          / If Middleware checks have been passed, execute
           if (execute) {
             if (listener.once) {
               listeners[index] = null;
@@ -443,7 +443,7 @@ var EventEmitter = function () {
           }
         });
 
-        // Dirty way of removing used Events
+        / Dirty way of removing used Events
         while (listeners.indexOf(null) !== -1) {
           listeners.splice(listeners.indexOf(null), 1);
         }

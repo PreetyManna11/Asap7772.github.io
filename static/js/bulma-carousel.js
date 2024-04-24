@@ -8,42 +8,42 @@
 	else
 		root["bulmaCarousel"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
+return /******/ (function(modules) { / webpackBootstrap
+/******/ 	/ The module cache
 /******/ 	var installedModules = {};
 /******/
-/******/ 	// The require function
+/******/ 	/ The require function
 /******/ 	function __webpack_require__(moduleId) {
 /******/
-/******/ 		// Check if module is in cache
+/******/ 		/ Check if module is in cache
 /******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
 /******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
+/******/ 		/ Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/
-/******/ 		// Execute the module function
+/******/ 		/ Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/
-/******/ 		// Flag the module as loaded
+/******/ 		/ Flag the module as loaded
 /******/ 		module.l = true;
 /******/
-/******/ 		// Return the exports of the module
+/******/ 		/ Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/
 /******/
-/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	/ expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
 /******/
-/******/ 	// expose the module cache
+/******/ 	/ expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// define getter function for harmony exports
+/******/ 	/ define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
 /******/ 			Object.defineProperty(exports, name, {
@@ -54,7 +54,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		}
 /******/ 	};
 /******/
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	/ getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
 /******/ 			function getDefault() { return module['default']; } :
@@ -63,13 +63,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 		return getter;
 /******/ 	};
 /******/
-/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	/ Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
-/******/ 	// __webpack_public_path__
+/******/ 	/ __webpack_public_path__
 /******/ 	__webpack_require__.p = "";
 /******/
-/******/ 	// Load entry module and return exports
+/******/ 	/ Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
@@ -128,11 +128,11 @@ var offset = function offset(element) {
 	};
 };
 
-// returns an element's width
+/ returns an element's width
 var width = function width(element) {
 	return element.getBoundingClientRect().width || element.offsetWidth;
 };
-// returns an element's height
+/ returns an element's height
 var height = function height(element) {
 	return element.getBoundingClientRect().height || element.offsetHeight;
 };
@@ -509,26 +509,26 @@ var bulmaCarousel = function (_EventEmitter) {
     var _this = _possibleConstructorReturn(this, (bulmaCarousel.__proto__ || Object.getPrototypeOf(bulmaCarousel)).call(this));
 
     _this.element = Object(__WEBPACK_IMPORTED_MODULE_2__utils_type__["c" /* isString */])(selector) ? document.querySelector(selector) : selector;
-    // An invalid selector or non-DOM node has been provided.
+    / An invalid selector or non-DOM node has been provided.
     if (!_this.element) {
       throw new Error('An invalid selector or non-DOM node has been provided.');
     }
     _this._clickEvents = ['click', 'touch'];
 
-    // Use Element dataset values to override options
+    / Use Element dataset values to override options
     var elementConfig = _this.element.dataset ? Object.keys(_this.element.dataset).filter(function (key) {
       return Object.keys(__WEBPACK_IMPORTED_MODULE_12__defaultOptions__["a" /* default */]).includes(key);
     }).reduce(function (obj, key) {
       return _extends({}, obj, _defineProperty({}, key, _this.element.dataset[key]));
     }, {}) : {};
-    // Set default options - dataset attributes are master
+    / Set default options - dataset attributes are master
     _this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_12__defaultOptions__["a" /* default */], options, elementConfig);
 
     _this._id = Object(__WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* uuid */])('slider');
 
     _this.onShow = _this.onShow.bind(_this);
 
-    // Initiate plugin
+    / Initiate plugin
     _this._init();
     return _this;
   }
@@ -557,7 +557,7 @@ var bulmaCarousel = function (_EventEmitter) {
     value: function _init() {
       this._items = Array.from(this.element.children);
 
-      // Load plugins
+      / Load plugins
       this._breakpoint = new __WEBPACK_IMPORTED_MODULE_5__components_breakpoint__["a" /* default */](this);
       this._autoplay = new __WEBPACK_IMPORTED_MODULE_4__components_autoplay__["a" /* default */](this);
       this._navigation = new __WEBPACK_IMPORTED_MODULE_8__components_navigation__["a" /* default */](this);
@@ -585,21 +585,21 @@ var bulmaCarousel = function (_EventEmitter) {
     value: function _build() {
       var _this2 = this;
 
-      // Generate HTML Fragment of template
+      / Generate HTML Fragment of template
       this.node = document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_13__templates__["a" /* default */])(this.id));
-      // Save pointers to template parts
+      / Save pointers to template parts
       this._ui = {
         wrapper: this.node.firstChild,
         container: this.node.querySelector('.slider-container')
 
-        // Add slider to DOM
+        / Add slider to DOM
       };this.element.appendChild(this.node);
       this._ui.wrapper.classList.add('is-loading');
       this._ui.container.style.opacity = 0;
 
       this._transitioner = new __WEBPACK_IMPORTED_MODULE_11__components_transitioner__["a" /* default */](this);
 
-      // Wrap all items by slide element
+      / Wrap all items by slide element
       this._slides = this._items.map(function (item, index) {
         return _this2._createSlide(item, index);
       });
@@ -682,7 +682,7 @@ var bulmaCarousel = function (_EventEmitter) {
       }
     }
 
-    // Update slides classes
+    / Update slides classes
 
   }, {
     key: '_setClasses',
@@ -774,7 +774,7 @@ var bulmaCarousel = function (_EventEmitter) {
     value: function show(index) {
       var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
-      // If all slides are already visible then return
+      / If all slides are already visible then return
       if (!this.state.length || this.state.length <= this.slidesToShow) {
         return;
       }
@@ -790,7 +790,7 @@ var bulmaCarousel = function (_EventEmitter) {
         this._infinite.apply();
       }
 
-      // If new slide is already the current one then return
+      / If new slide is already the current one then return
       if (this.state.index === this.state.next) {
         return;
       }
@@ -813,7 +813,7 @@ var bulmaCarousel = function (_EventEmitter) {
         prev: undefined
       };
 
-      // Fix options
+      / Fix options
       if (this.options.loop && this.options.infinite) {
         this.options.loop = false;
       }
@@ -839,7 +839,7 @@ var bulmaCarousel = function (_EventEmitter) {
       }
 
       this._breakpoint.apply();
-      // Move all created slides into slider
+      / Move all created slides into slider
       this._slides.forEach(function (slide) {
         return _this5._ui.container.appendChild(slide);
       });
@@ -1194,7 +1194,7 @@ var isUiWebView = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(navigator.
 
 var supportsTouchEvents = !!('ontouchstart' in window);
 var supportsPointerEvents = !!('PointerEvent' in window);
-var supportsTouch = supportsTouchEvents || window.DocumentTouch && document instanceof DocumentTouch || navigator.maxTouchPoints; // IE >=11
+var supportsTouch = supportsTouchEvents || window.DocumentTouch && document instanceof DocumentTouch || navigator.maxTouchPoints; / IE >=11
 var pointerDown = !supportsTouch ? 'mousedown' : 'mousedown ' + (supportsTouchEvents ? 'touchstart' : 'pointerdown');
 var pointerMove = !supportsTouch ? 'mousemove' : 'mousemove ' + (supportsTouchEvents ? 'touchmove' : 'pointermove');
 var pointerUp = !supportsTouch ? 'mouseup' : 'mouseup ' + (supportsTouchEvents ? 'touchend' : 'pointerup');
@@ -1258,7 +1258,7 @@ var Breakpoints = function () {
 	}, {
 		key: '_getActiveBreakpoint',
 		value: function _getActiveBreakpoint() {
-			//Get breakpoint for window width
+			/Get breakpoint for window width
 			var _iteratorNormalCompletion = true;
 			var _didIteratorError = false;
 			var _iteratorError = undefined;
@@ -1591,7 +1591,7 @@ var Navigation = function () {
 	}, {
 		key: 'refresh',
 		value: function refresh() {
-			// let centerOffset = Math.floor(this.options.slidesToShow / 2);
+			/ let centerOffset = Math.floor(this.options.slidesToShow / 2);
 			if (!this.slider.options.loop && !this.slider.options.infinite) {
 				if (this.slider.options.navigation && this.slider.state.length > this.slider.slidesToShow) {
 					this._ui.previous.classList.remove('is-hidden');
@@ -1989,7 +1989,7 @@ var Transitioner = function () {
 	}, {
 		key: 'apply',
 		value: function apply(force, callback) {
-			// If we don't force refresh and animation in progress then return
+			/ If we don't force refresh and animation in progress then return
 			if (this._animating && !force) {
 				return;
 			}
